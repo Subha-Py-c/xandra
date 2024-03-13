@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Encryptor/Decryptor</title>
+    <link rel="icon" type="image/png" href="encode_decode.png">
+    <link rel="stylesheet" href="encode_decode.css">
+    <script defer src="encode_decode.js"></script>
+</head>
+<body>
+    <div id="nav">
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+        </nav>
+    </div>
+    <section class="hidden">
+        <h1>Message <span style="color:aquamarine;">Encryptor</span>/<span style="color: aqua;">Decryptor</span></h1>
+    </section>
+
+    <section class="hidden">
+        <div id="encodeSection">
+            <h2>Encrypt any Message Here</h2><br>
+            <div style="display: grid; place-items: center;">
+                <input type="text" id="encodeInput" placeholder="Enter your message"><br>
+                <div class="button-container">
+                    <button onclick="encodeMessage()">Encode</button>
+                    <button onclick="copyEncodedMessage()">Copy</button>
+                </div>
+                <p id="encodedMessage"></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="hidden">
+        <div id="decodeSection">
+            <h2>Decrypt an Encrypted Message Here</h2><br>
+            <div style="display: grid; place-items: center;">
+                <input type="text" id="decodeInput" placeholder="Enter the encoded message"><br>
+                <div class="button-container">
+                    <button onclick="decodeMessage()">Decode</button>
+                    <button onclick="copyDecodedMessage()">Copy</button>
+                </div>
+                <p id="decodedMessage"></p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

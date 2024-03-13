@@ -1,0 +1,328 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+/* Keyframes */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Body */
+body {
+    background-color: bisque;
+    color: #131316;
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+/* nav */
+nav{
+    animation: fadeIn 1.2s ease-out;
+}
+nav ul {
+    list-style-type: none;
+    margin-left: 30px;
+    margin-bottom: -20px;
+    margin-right: 30px;
+    margin-top: 30px;
+    padding: 0px;
+    text-align: right;
+}
+
+nav ul li {
+    text-align: left;
+    position: relative;
+    display: inline-block;
+}
+
+nav ul li a {
+    text-align: left;
+    text-decoration: none;
+    color: black;
+    border-bottom: none;
+    display: block;
+    padding:10px;
+}
+
+nav ul li a button{
+    max-width: 100%;
+    max-height: 20px;
+    color: white;
+    background-color: red;
+}
+
+/* Hide sub-menu by default */
+nav ul ul {
+    display: none;
+    position: absolute;
+    background-color: bisque;
+    /* box-shadow: 0 8px 16px rgba(0,0,0,0.2); */
+    top: 100%; /* Position the sub-menu below the parent menu item */
+    left: 0; /* Align the left edge of the sub-menu with the left edge of the parent menu item */
+}
+
+/* Show sub-menu on hover */
+nav ul li:hover > ul {
+    display: block;
+}
+
+nav ul ul li {
+    display: block;
+}
+
+nav ul ul li a {
+    text-align: right;
+    padding: 10px 15px;
+    color: black;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    border-bottom: 1px dotted #000;
+}
+
+a:hover {
+    background: linear-gradient(to right, red, rgb(255, 162, 0));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+a:active {
+    color: rgb(255, 162, 0);
+}
+
+/* Animation Classes */
+.animated-div {
+    opacity: 0;
+    animation: fadeIn 0.8s forwards;
+}
+
+/* Letter */
+.letter {
+    display: inline-block;
+    margin-right: -0.08em;
+}
+
+/* IDs */
+#hello {
+    font-size: 11.8rem;
+    font-weight: 900;
+    margin: 30px;
+    letter-spacing: -0.06em;
+    animation: slideIn 1.2s ease-out;
+}
+
+#div1 { animation-delay: 0s; }
+#div2 { animation-delay: 1s; }
+#div3 { animation-delay: 1.4s; }
+#i1 { animation-delay: 0s;}
+#i2 { animation-delay: 0.2s;}
+#i3 { animation-delay: 0.4s;}
+#i4 { animation-delay: 0.6s;}
+#i5 { animation-delay: 0.8s;}
+
+#name {
+    margin: 30px;
+    font-weight: 500;
+    font-size: 1.8em;
+}
+
+#intro {
+    margin: 30px;
+    font-weight: 400;
+    font-size: 1.5em;
+}
+
+#exp {
+    padding-top: 60px;
+    margin: 30px;
+    font-size: 3.8em;
+    font-weight: 550;
+}
+
+#contacts {
+    padding-top: 60px;
+    margin: 30px;
+    font-size: 3.8em;
+    font-weight: 550;
+}
+
+#last {
+    margin-top: 8px;
+    margin-bottom: 60px;
+    margin-left: 60px;
+    margin-right: 60px;
+    font-size: 1.2em;
+    font-style: normal;
+    font-weight: 400; 
+}
+
+/* Classes */
+.first {
+    margin-top: 60px;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-bottom: 8px; 
+    font-size: 1.2em;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.middle {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-left: 60px;
+    margin-right: 60px;
+    font-size: 1.2em;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.inverse {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.inverse:hover {
+    color: whitesmoke;
+    transform: translateX(20px);
+    opacity: 1;
+    background-color: #000;
+}
+
+.inverse:hover span {
+    animation: none;
+}
+
+/* Sections */
+section {
+    display: grid;
+    place-items: center; 
+    align-content: center; 
+    min-height: 40vh;
+}
+
+/* Hidden Class */
+.hidden h1 {
+    font-size: 2.1em;
+    font-style: inherit;
+    font-weight: 450;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s ;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+/* For Smaller Screens */
+@media screen and (max-width: 510px) {
+    /* Fonts and Margins */
+    #hello {
+        font-size: 6.8rem;
+        font-weight: 700;
+        margin: 10px;
+    }
+    
+    #name {
+        margin: 15px;
+        font-weight: 300;
+        font-size: 1.3em;
+    }
+    
+    #intro {
+        margin: 15px;
+        font-weight: 200;
+        font-size: 0.8em;
+    }
+    
+    #exp {
+        padding-top: 30px;
+        margin: 15px;
+        font-size: 1.8em;
+        font-weight: 350;
+    }
+    
+    /* Body */
+    body {
+        background-color: bisque;
+        color: #131316;
+        font-family: 'Poppins', sans-serif;
+        padding: 0;
+        margin: 0;
+    }
+    
+    /* Sections */
+    #first {
+        margin-top: 30px;
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-bottom: 4px; 
+        font-size: 0.5em;
+        font-style: normal;
+        font-weight: 200;
+    }
+    
+    #second {
+        margin-top: 4px;
+        margin-bottom: 4px;
+        margin-left: 30px;
+        margin-right: 30px;
+        font-size: 0.5em;
+        font-style: normal;
+        font-weight: 200;
+    }
+    
+    #last {
+        margin-top: 4px;
+        margin-bottom: 30px;
+        margin-left: 30px;
+        margin-right: 30px;
+        font-size: 0.5em;
+        font-style: normal;
+        font-weight: 200; 
+    }
+
+    /* Hover Effect */
+    .inverse:hover {
+        color: whitesmoke;
+        transform: translateX(10px);
+        opacity: 1;
+        background-color: #000;
+    }
+
+    /* Links */
+    a {
+        text-decoration: none;
+        border-bottom: 1px dotted #000;
+    }
+
+    /* Hidden Class */
+    .hidden h1 {
+        font-size: 0.9em;
+        font-style: inherit;
+        font-weight: 250;
+    }
+}

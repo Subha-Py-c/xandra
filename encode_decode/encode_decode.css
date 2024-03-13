@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+body {
+    background-color: #131316;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+nav{
+    text-align: right;
+    margin-right: 40px;
+    margin-top: 30px;
+}
+
+nav ul{
+    text-decoration: none;
+    list-style-type: none;
+}
+
+nav ul li{
+    text-decoration: none;
+}
+
+nav ul li a{
+    color:khaki;
+    /* #ff0066 */
+    font-size: 1.5rem;
+
+}
+
+section {
+    display: grid;
+    place-items: center; 
+    align-content: center; 
+    min-height: 70vh;
+}
+
+h1{
+    font-size: 3.7em;
+}
+
+h2{
+    font-size: 2.5em;
+    color: bisque;
+}
+
+h3{
+    font-size: 2.5em;
+}
+
+.hidden{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s ;
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+/* Styles for smaller screens (e.g., mobile devices) */
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 2.5em; /* Smaller font size for h1 on smaller screens */
+    }
+
+    h2, h3 {
+        font-size: 1.5em; /* Smaller font size for h2 and h3 on smaller screens */
+    }
+
+    p {
+        font-size: 0.9em; /* Smaller font size for p on smaller screens */
+    }
+
+    section {
+        min-height: 40vh; /* Reduced min-height for sections on smaller screens */
+    }
+}
+
+/* Style for encode and decode buttons */
+.button-container {
+    display: flex;
+    gap: 10px; /* Adjust the gap between buttons */
+}
+
+button {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #043899; 
+    color: #fff; 
+    cursor: pointer;
+    transition: background-color 0.2s ease; 
+}
+
+button:hover{
+    background: linear-gradient(to right, skyblue, blue);
+}
+
+button:active {
+    box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.5); /* Adjust shadow properties as needed */
+}
+
+/* Style for input boxes */
+input[type="text"] {
+    width: 80%; /* Full width */
+    padding: 10px; /* Padding around the text inside the input box */
+    border: 1px solid #ced4da; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    transition: border-color 0.3s ease; /* Smooth transition on focus */
+}
+
+/* Style for input boxes when focused */
+input[type="text"]:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: #007bff; /* Border color when focused */
+}
