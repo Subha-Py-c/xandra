@@ -305,6 +305,13 @@ section {
         font-weight: 200; 
     }
 
+    section {
+        display: grid;
+        place-items: center; 
+        align-content: center; 
+        min-height: 15vh;
+    }
+
     /* Hover Effect */
     .inverse:hover {
        font-size: 0.5em;
