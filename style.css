@@ -241,7 +241,7 @@ section {
 @media screen and (max-width: 510px) {
     /* Fonts and Margins */
     #hello {
-        font-size: 6.8rem;
+        font-size: 4.3rem;
         font-weight: 700;
         margin: 10px;
     }
@@ -313,8 +313,9 @@ section {
     }
 
     /* Hover Effect */
-    .inverse:hover {
-       font-size: 0.5em;
+    /* Disable Hover Effect for All Items */
+    *:hover {
+       cursor: default;
     }
 
     /* Links */
