@@ -256,8 +256,8 @@ a:active {
 }
 
 #div1 { animation-delay: 0s; }
-#div2 { animation-delay: 1s; }
-#div3 { animation-delay: 1.4s; }
+#div2 { animation-delay: 1.2s; }
+#div3 { animation-delay: 1.5s; }
 #i1 { animation-delay: 0s;}
 #i2 { animation-delay: 0.2s;}
 #i3 { animation-delay: 0.4s;}
