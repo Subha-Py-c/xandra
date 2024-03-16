@@ -382,6 +382,26 @@ section {
     transform: translateX(0);
 }
 
+
+/* Default styles for both divs */
+.first, .phone {
+    display: none; /* Hide both divs by default */
+}
+
+/* Display the 'first' div on laptops and desktops */
+@media only screen and (min-width: 768px) {
+    .first {
+        display: block; /* Show 'first' div */
+    }
+}
+
+/* Display the 'phone' div on phones */
+@media only screen and (max-width: 767px) {
+    .phone {
+        display: block; /* Show 'phone' div */
+    }
+}
+
 /* For Smaller Screens */
 @media screen and (max-width: 510px) {
     /* Fonts and Margins */
@@ -404,6 +424,13 @@ section {
     }
     
     #exp {
+        padding-top: 30px;
+        margin: 15px;
+        font-size: 1.8em;
+        font-weight: 350;
+    }
+    
+    .phone{
         padding-top: 30px;
         margin: 15px;
         font-size: 1.8em;
@@ -460,7 +487,8 @@ section {
     /* Hover Effect */
     /* Disable Hover Effect for All Items */
     *:hover {
-       cursor: default;
+       opacity: 1;
+       transform: none;
     }
 
     /* Links */
