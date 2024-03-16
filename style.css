@@ -4,11 +4,11 @@
 /* Keyframes */
 @keyframes slideIn {
     0% {
-        transform: translateX(-50px);
+        transform: translateY(50px);
         opacity: 0;
     }
     100% {
-        transform: translateX(0);
+        transform: translateY(0);
         opacity: 1;
     }
 }
@@ -16,6 +16,125 @@
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
+}
+
+@keyframes inverse-color {
+    0%{
+        background-color: transparent;
+        color: #000;
+    }
+    100%{
+        background-color: #000;
+        color: whitesmoke;
+    }
+}
+
+@keyframes underline {
+    0% {
+      width: 0; /* Initial width of the underline */
+      margin-left: 0; /* Initial position of the underline */
+    }
+    
+    100% {
+      width: 100%; /* Width of the underline */
+      margin-left: 0; /* Position of the underline (adjust if needed) */
+    }
+  }
+  
+/* CREATES AN UNDERLINE, ACTUALLY WRONG BUT NEED THE ANALYSIS, UNDERLINE LOOKED GOOD THOUGH */
+
+  /* Apply the animation to the element you want to underline */
+  .animated-underline{
+    display: inline-block; 
+    /* Ensures the underline only takes the width of the text */
+    border-bottom: 2px solid rgb(0, 0, 0);
+     /* Style of the underline */
+    animation: underline 1s ease-in forwards; 
+    /* Animation properties */
+  }
+  
+
+
+/* GRADUAL UNDERLINE ANIMATION */
+/* Define the default state */
+.animated-underline-proper {
+  position: relative; /* Required for absolute positioning */
+  text-decoration: none; /* Remove default underline */
+  color: inherit; /* Inherit text color */
+}
+
+/* Define the underline */
+.animated-underline-proper::before {
+  content: ''; /* Required for pseudo-element */
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0; /* Initial width of the underline */
+  height: 2px; /* Thickness of the underline */
+  background-color: rgb(0, 0, 0); /* Color of the underline */
+  transition: width 0.3s ease-in; /* Transition effect */
+}
+
+/* Define the hover effect */
+.animated-underline-proper:hover::before {
+  width: 100%; /* Width of the underline on hover */
+}
+
+
+
+
+/* HIGHLIGHT THE TEXT ONLY ANIMATION */
+/* Define the default state */
+.animated-highlight {
+    color: black; /* Default text color */
+    transition: color 0.3s ease-in; /* Transition effect */
+}
+  
+  /* Define the hover effect */
+.animated-highlight:hover {
+    color: red; /* Text color on hover */
+}
+  
+
+/* PROPER HIGHLIGHT */
+/* Define the default state */
+.animated-text-highlight {
+    color: black; /* Default text color */
+    position: relative; /* Required for absolute positioning */
+}
+  
+  /* Define the highlight effect */
+.animated-text-highlight::before {
+    content: ''; /* Required for pseudo-element */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0; /* Initial width of the highlight */
+    height: 100%;
+    background-color: yellow; /* Highlight color */
+    z-index: -1; /* Ensure the highlight is behind the text */
+    transition: width 0.4s ease-in-out; /* Transition effect */
+}
+  
+  /* Define the hover effect */
+.animated-text-highlight:hover::before {
+    width: 100%; /* Width of the highlight on hover */
+}
+
+  
+
+/* FONTS */
+.tangerine-regular {
+    font-family: "Tangerine", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+.tangerine-bold {
+    font-family: "Tangerine", cursive;
+    font-weight: 700;
+    /* font-size: 32px; */
+    font-style: normal;
 }
 
 /* Body */
@@ -56,6 +175,14 @@ nav ul li a {
     padding:10px;
 }
 
+nav ul li a:hover{
+    background: linear-gradient(to right, red, rgb(255, 162, 0));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: underline 800ms forwards;
+}
+
 nav ul li a button{
     max-width: 100%;
     max-height: 20px;
@@ -88,8 +215,10 @@ nav ul ul li a {
     color: black;
 }
 
+
 /* Links */
 a {
+    color:rgb(152, 14, 88);
     text-decoration: none;
     border-bottom: 1px dotted #000;
 }
@@ -135,13 +264,24 @@ a:active {
 #i4 { animation-delay: 0.6s;}
 #i5 { animation-delay: 0.8s;}
 
-#name {
+.name {
     margin: 30px;
     font-weight: 500;
     font-size: 1.8em;
 }
 
-#intro {
+.name span{
+    font-family: "Tangerine", cursive;
+    font-weight: 700;
+    font-size: 2.0em;
+    font-style: normal;
+}
+
+.name span:hover{
+    animation: underline 1s forwards;
+}
+
+.intro {
     margin: 30px;
     font-weight: 400;
     font-size: 1.5em;
@@ -199,10 +339,15 @@ a:active {
 }
 
 .inverse:hover {
-    color: whitesmoke;
     transform: translateX(20px);
     opacity: 1;
-    background-color: #000;
+    animation: inverse-color 400ms forwards;
+
+    /* ERROR::: */
+    /* animation: underline 800ms forwards; */
+    /*  */
+    /*  */
+    /*  */
 }
 
 .inverse:hover span {
@@ -246,13 +391,13 @@ section {
         margin: 10px;
     }
     
-    #name {
+    .name {
         margin: 15px;
         font-weight: 300;
         font-size: 1.3em;
     }
     
-    #intro {
+    .intro {
         margin: 15px;
         font-weight: 200;
         font-size: 0.8em;
